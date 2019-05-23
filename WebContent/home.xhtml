@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+ 
+	<!-- 
+		Replace path to template, title, header and body
+		with actual data.
+	 -->
+	<ui:composition template="/template/template.xhtml">
+			<ui:define name="body">
+				<h:form>
+	  <b:dataTable value="#{heroeBean.retornarHeroes()}"
+	               var="h">
+	    <b:dataTableColumn value="#{h.nombre}" />
+	    <b:dataTableColumn value="#{h.heroe}" />
+	    
+	    <b:dataTableColumn>
+	    	<b:button rendered="#{loginBean.permiso()}" value="Editar" />
+	    	<b:button value="Eliminar" />
+	    </b:dataTableColumn>
+	    
+	    
+      </b:dataTable>
+      
+      
+      
+	</h:form>
+			</ui:define>
+	</ui:composition>
+
+</html>
